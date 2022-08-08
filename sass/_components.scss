@@ -59,6 +59,12 @@
   flex: 0 0 40%;
   justify-content: center;
 
+  @media only screen and (max-width: 500px) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-grey-light-2);
+  }
+
   &__input {
     width: 90%;
     font-family: inherit;
@@ -166,11 +172,26 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: 900px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: 900px) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: .5rem;
+      @media only screen and (max-width: 900px) {
+        margin-bottom: 0;
+      }
+
     }
 
   }
@@ -209,6 +230,14 @@
     padding: 1.5rem 3rem;
     position: relative;
     z-index: 10;
+    @media only screen and (max-width: 900px) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+      padding: 1rem;
+    }
   }
 
 
@@ -217,6 +246,11 @@
     height: 1.75rem;
     fill: currentColor;
     margin-right: 2rem;
+    @media only screen and (max-width: 600px) {
+      margin: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   &__name {
@@ -229,6 +263,9 @@
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .footer__link,
@@ -266,6 +303,13 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1.5rem 3rem;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
+    @media only screen and (max-width: 500px) {
+      padding: 1.5rem 1rem;
+    }
   }
 
   &__stars {
@@ -300,17 +344,29 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media only screen and (max-width: 600px) {
+      padding: 0 1.5rem;
+    }
+    @media only screen and (max-width: 500px) {
+      margin-left: 1rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: .8rem;
     text-transform: uppercase;
+    @media only screen and (max-width: 500px) {
+      text-align: center;
+    }
   }
 }
 
@@ -326,7 +382,7 @@
 .list {
   list-style: none;
   margin: 3rem 0;
-  padding: 3rem;
+  padding: 3rem 0;
   border-top: var(--bottom-line);
   border-bottom: var(--bottom-line);
 
@@ -345,7 +401,7 @@
     width: 1rem;
     margin-right: 1rem;
 
-    @supports not (-webkit-mask-image: url("../img/chevron-thin-right.svg")) {
+    @supports not (-webkit-mask-image: url("../img/chevron-thin-right.svg") or (-webkit-mask-image: url("../img/chevron-thin-right.svg"))) {
       background-image: url("../img/chevron-thin-right.svg");
       background-size: cover;
     }
@@ -367,6 +423,11 @@
   display: flex;
   align-items: center;
 
+  &__friends {
+    display: flex;
+
+  }
+
   &__photo {
     box-sizing: content-box;
     height: 4rem;
@@ -376,6 +437,11 @@
 
     &:not(:last-child) {
       margin-right: -1.5rem;
+    }
+
+    @media only screen and (max-width: 1150px) {
+      margin-right: -2rem;
+
     }
   }
 
@@ -392,6 +458,11 @@
   padding: 3rem;
   margin-bottom: 3.5rem;
   position: relative;
+
+  @media only screen and (max-width: 900px) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
 
   &__user {
@@ -435,7 +506,12 @@
     left: 1rem;
     font-size: 5rem;
     font-family: sans-serif;
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
   }
+
 }
 
 //CTA//
@@ -443,6 +519,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and (max-width: 900px) {
+    padding: 2rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;
